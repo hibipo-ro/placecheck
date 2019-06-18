@@ -1,3 +1,9 @@
+<% @posts.each do |post| %>
+<li>
+  <a href="#"><%= post.title %></a>
+</li>
+<% end %>
+
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
@@ -13,13 +19,7 @@
     </aside>
     <div class="col-md-8">
       <h3>Post Feed</h3>
-      <%# <%= render 'shared/feed' %> %>
-      <% @posts.each do |post| %>
-      <li>
-        <a href="#"><%= post.title %></a>
-      </li>
-      <% end %>
-      
+      <%# <a href="#"><%= render 'shared/feed' %></a> %>
     </div>
   </div>
 <% else %>
