@@ -1,0 +1,25 @@
+<div class="articleWrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="article-main">
+                    <div class="article-header">
+                        <h1 class="header-title"> <%= @post.title %> </h1>
+                    </div>
+                    <section class="articleContent">
+                        <div class="articleContent_story">
+                            <%= @post.content %>
+                        </div>
+                        <div class="articleContent_chart">
+                            <canvas id="myRadarChart"></canvas>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas id="myRadarChart"></canvas>
+<script>draw_chart();</script>
+

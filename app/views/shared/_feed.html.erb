@@ -1,6 +1,7 @@
 <% if @feed_items.any? %>
   <ol class="posts">
-    <%= render @feed_items %>
+    <a href="#"><%= render @feed_items %></a>
+    <a href="https://www.google.com/?hl=ja">aaaa</a>
   </ol>
   <%= will_paginate @feed_items %>
 <% end %>
