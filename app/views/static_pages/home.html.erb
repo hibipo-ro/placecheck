@@ -13,10 +13,10 @@
     </aside>
     <div class="col-md-8">
       <h3>Post Feed</h3>
-      <%# <%= render 'shared/feed' %> %>
+      <%# <%= render 'shared/feed' %>   
       <% @posts.each do |post| %>
       <li>
-        <a href="#"><%= post.title %></a>
+        <a href="/posts/<%= post.id %>"><%= post.title %></a>
       </li>
       <% end %>
       
