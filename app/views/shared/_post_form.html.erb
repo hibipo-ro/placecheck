@@ -1,65 +1,65 @@
 <%= provide(:title, '新規投稿') %>
-<div class="articleEditor">
+<div>
     <%= form_for @post do |f| %>
-        <div class="editor-content">
-            <div class="editorTitle">
+        <div>
+            <div>
                 <%= f.text_field :title, placeholder: 'タイトル', class: 'form-control' %>
             </div>
-            <div class="editorBody">
-                <div class="editorStory">
+            <div>
+                <div>
                     <%= f.text_area :content, placeholder: '持ってるアイテムのいい所をみんなに教えてあげよう!', class: 'editorStory_textarea' %>
                 </div>
-                <div class="editorChartBody">
-                    <h4 class="chart-text">グラフを作成できます。</h4>
-                    <div class="editorChart">
-                        <div class="editorChart_box">
-                            <div class="editorChart_label">
+                <div>
+                    <h4>グラフを作成できます。</h4>
+                    <div>
+                        <div>
+                            <div>
                                 <h6><span class="badge badge-danger">必須</span></h6>
                                 <%= f.label :wifi, class: 'form-control mr-3' %>
                             </div>
-                            <div class="editorChart_data">
+                            <div>
                                 <%= f.select :data1, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
                             </div>
                         </div>
-                        <div class="editorChart_box">
-                            <div class="editorChart_label">
+                        <div>
+                            <div>
                                 <h6><span class="badge badge-danger">必須</span></h6>
                                 <%= f.label :テーブルの広さ,  class: 'form-control mr-3' %>
                             </div>
-                            <div class="editorChart_data">
+                            <div>
                                 <%= f.select :data2, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
                             </div>
                         </div>
-                        <div class="editorChart_box">
-                            <div class="editorChart_label">
+                        <div>
+                            <div>
                                 <h6><span class="badge badge-danger">必須</span></h6>
                                 <%= f.label :空調, class: 'form-control mr-3' %>
                             </div>
-                            <div class="editorChart_data">
+                            <div>
                                 <%= f.select :data3, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
                             </div>
                         </div>
-                        <div class="editorChart_box">
-                            <div class="editorChart_label">
+                        <div>
+                            <div>
                                 <%= f.label :人の少なさ,  class: 'form-control mr-3' %>
                             </div>
-                            <div class="editorChart_data">
+                            <div>
                                 <%= f.select :data4, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
                             </div>
                         </div>
-                        <div class="editorChart_box">
-                            <div class="editorChart_label">
+                        <div>
+                            <div>
                                 <%= f.label :静かさ, class: 'form-control mr-3' %>
                             </div>
-                            <div class="editorChart_data">
+                            <div>
                                 <%= f.select :data5, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
                             </div>
                         </div>
                     </div>
                 </div>              
             </div>
-            <div class="editorFooter">
-                <div class="editorSubmit">
+            <div>
+                <div>
                     <%= f.submit '投稿する', class: 'btn btn-default'%>
                 </div>
             </div>

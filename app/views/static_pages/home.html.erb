@@ -14,11 +14,22 @@
     <div class="col-md-8">
       <h3>Post Feed</h3>
       <%# <%= render 'shared/feed' %>   
-      <% @posts.each do |post| %>
-      <li>
-        <a href="/posts/<%= post.id %>"><%= post.title %></a>
-      </li>
-      <% end %>
+
+      <div class="container">
+        <div class="row">
+        <% @posts.each do |post| %>
+          <div class="col-sm-4 card mb-3">
+          <li>
+            <a href="/posts/<%= post.id %>"><%= post.title %></a>
+          </li>
+            <%= post.content %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+
+
+
       
     </div>
   </div>
