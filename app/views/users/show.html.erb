@@ -16,9 +16,12 @@
     <% if @user.posts.any? %>
       <h3>Posts (<%= @user.posts.count %>)</h3>
       <ol class="posts">
-        <%= render @posts %>
+        <%# <%= render @posts %> %>
+        <% @posts.each do |post| %>
+        <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+        <% end %>
       </ol>
-      <%= will_paginate @posts %>
+      <%# <%= will_paginate @posts %> %>
     <% end %>
   </div>
 </div>

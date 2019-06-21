@@ -3,15 +3,16 @@ window.draw_example_chart = ->
     myChart = new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['オススメ', '価格', 'デザイン', '切れ味', '使い易さ'],
+            labels: ['Wifi', 'テーブルの広さ', '空調', '人の少なさ', '静かさ'],
             datasets: [{
                 label: '例',
-                data: [5, 4, 2, 4, 3],
-                backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                borderColor: 'rgba(255, 206, 86, 1.0)',
+                data: [5, 2, 4, 5, 3],
+                # backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                backgroundColor: 'rgba(227,235,179,0.4)',
+                borderColor: 'rgba(227, 235, 179, 1.0)',
                 borderWidth: 1,
                 pointRadius: 3.5,
-                pointBackgroundColor: 'rgba(255, 206, 86, 1)',
+                pointBackgroundColor: 'rgba(227,235,179,1)',
                 pointBorderColor: '#fff'
             }]
         },
@@ -37,11 +38,11 @@ window.draw_chart = ->
             datasets: [{
                 label: 'chart',
                 data: gon.data,
-                backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                borderColor: 'rgba(255, 206, 86, 1.0)',
+                backgroundColor: 'rgba(227,235,179,0.4)',
+                borderColor: 'rgba(227,235,179,1.0)',
                 borderWidth: 1,
                 pointRadius: 3.5,
-                pointBackgroundColor: 'rgba(255, 206, 86, 1)',
+                pointBackgroundColor: 'rgba(227,235,179,1.0)',
                 pointBorderColor: '#fff'
             }]
         },

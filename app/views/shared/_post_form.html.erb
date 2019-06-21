@@ -2,65 +2,65 @@
 <div>
     <%= form_for @post do |f| %>
         <div>
+            <h4>勉強環境チェック</h4>
             <div>
-                <%= f.text_field :title, placeholder: 'タイトル', class: 'form-control' %>
+                <%= f.text_field :title, placeholder: 'モスバーガー(場所)', class: 'form-control' %>
             </div>
             <div>
                 <div>
-                    <%= f.text_area :content, placeholder: '持ってるアイテムのいい所をみんなに教えてあげよう!', class: 'editorStory_textarea' %>
+                    <%= f.text_area :content, placeholder: 'トイレが綺麗だった   (コメント)', class: 'editorStory_textarea' %>
                 </div>
                 <div>
-                    <h4>グラフを作成できます。</h4>
                     <div>
                         <div>
                             <div>
-                                <h6><span class="badge badge-danger">必須</span></h6>
-                                <%= f.label :wifi, class: 'form-control mr-3' %>
+                                <h6><span class="badge-danger">必須</span></h6>
+                                <%= f.label :wifi, class: 'font-weight-bold' %>
                             </div>
                             <div>
-                                <%= f.select :data1, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h6><span class="badge badge-danger">必須</span></h6>
-                                <%= f.label :テーブルの広さ,  class: 'form-control mr-3' %>
-                            </div>
-                            <div>
-                                <%= f.select :data2, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
+                                <%= f.select :data1, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'mb-1' %>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <h6><span class="badge badge-danger">必須</span></h6>
-                                <%= f.label :空調, class: 'form-control mr-3' %>
+                                <h6><span class="badge-danger">必須</span></h6>
+                                <%= f.label :テーブルの広さ,  class: 'font-weight-bold' %>
                             </div>
                             <div>
-                                <%= f.select :data3, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <%= f.label :人の少なさ,  class: 'form-control mr-3' %>
-                            </div>
-                            <div>
-                                <%= f.select :data4, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
+                                <%= f.select :data2, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'mb-1' %>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <%= f.label :静かさ, class: 'form-control mr-3' %>
+                                <h6><span class="badge-danger">必須</span></h6>
+                                <%= f.label :空調, class: 'font-weight-bold' %>
                             </div>
                             <div>
-                                <%= f.select :data5, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'custom-select' %>
+                                <%= f.select :data3, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'mb-1' %>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <%= f.label :人の少なさ,  class: 'font-weight-bold' %>
+                            </div>
+                            <div>
+                                <%= f.select :data4, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'mb-1' %>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <%= f.label :静かさ, class: 'font-weight-bold' %>
+                            </div>
+                            <div>
+                                <%= f.select :data5, [1, 2, 3, 4, 5], { include_blank: '選択して下さい' }, class: 'mb-1' %>
                             </div>
                         </div>
                     </div>
                 </div>              
             </div>
             <div>
-                <div>
-                    <%= f.submit '投稿する', class: 'btn btn-default'%>
+                <div class="btn btn-outline-primary">
+                    <%= f.submit '投稿する', class: 'btn btn-default text-primary'%>
                 </div>
             </div>
         </div>

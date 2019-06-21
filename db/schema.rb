@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190618094247) do
+ActiveRecord::Schema.define(version: 20190621064808) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -18,11 +18,6 @@ ActiveRecord::Schema.define(version: 20190618094247) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.string "label1"
-    t.string "label2"
-    t.string "label3"
-    t.string "label4"
-    t.string "label5"
     t.integer "data1"
     t.integer "data2"
     t.integer "data3"
