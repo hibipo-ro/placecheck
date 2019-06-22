@@ -20,8 +20,10 @@ gem 'gon', '~> 6.2.0'
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
 
+gem 'pg', '0.20.0'
+
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
+  # gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'pry-rails'
   gem 'pry-byebug'
@@ -43,8 +45,8 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
 end
 
+  
 group :production do
-  gem 'pg', '0.20.0'
   gem 'fog', '1.42'
 end
 
