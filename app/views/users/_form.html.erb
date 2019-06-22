@@ -14,5 +14,7 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+  <%= f.file_field :picture %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
