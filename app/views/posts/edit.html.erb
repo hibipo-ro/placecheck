@@ -1,14 +1,14 @@
-<%= provide(:title, '新規投稿') %>
+<%= provide(:title, '編集ページ') %>
 <div>
     <%= form_for @post do |f| %>
         <div>
             <h4>勉強環境チェック</h4>
             <div>
-                <%= f.text_field :title, placeholder: 'モスバーガー(場所)', class: 'form-control' %>
-            </div>
-            <div>
                 <div>
-                    <%= f.text_area :content, placeholder: 'トイレが綺麗だった   (コメント)', class: 'editorStory_textarea' %>
+                    <%= f.text_field :title, placeholder: 'モスバーガー(場所)', class: '' %>
+                </div>
+                <div>
+                    <%= f.text_area :content, placeholder: 'トイレが綺麗だった   (コメント)', class: '' %>
                 </div>
                 <div>
                     <div>

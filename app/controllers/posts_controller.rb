@@ -7,14 +7,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
     data = [@post.data1, @post.data2, @post.data3, @post.data4, @post.data5]
     gon.data = data.reject { |data| data.blank? }
     # binding.pry
   end
 
   def create
-     @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
       redirect_to root_url
@@ -23,19 +23,29 @@ class PostsController < ApplicationController
       render 'static_pages/home'
     end
   end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to("/")
+  end
   
 
   def destroy
     @post.destroy
     flash[:success] = "Post deleted"
-    redirect_to request.referrer || root_url
+    redirect_to("/")
   end
 
   private
 
     def post_params
       params.require(:post).permit(:content, :title,
-                                   :data1, :data2, :data3, :data4, :data5)
+                                   :data1, :data2, :data3, :data4, :data5, :picture)
     end
 
     def correct_user
