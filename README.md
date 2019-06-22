@@ -1,25 +1,10 @@
-# README
+# 勉強環境チェック
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+いろんな場所の勉強の環境をチェックできる
+出かける前に状態を知れたら便利です。
 
-Things you may want to cover:
 
-* Ruby version
+* A
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # placecheck
