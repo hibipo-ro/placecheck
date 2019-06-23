@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-4">
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -11,9 +11,8 @@
         <%= render 'shared/post_form' %>
       </section>
     </aside>
-    <div class="col-md-8">
+    <div class="col-8">
       <h3>場所一覧</h3>
-      <%# <%= render 'shared/feed' %>   
 
       <div class="container">
         <div class="row">
