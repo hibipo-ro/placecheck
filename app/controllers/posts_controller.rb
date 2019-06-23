@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    # @comment = Comment.new
     data = [@post.data1, @post.data2, @post.data3, @post.data4, @post.data5]
     gon.data = data.reject { |data| data.blank? }
     # binding.pry
