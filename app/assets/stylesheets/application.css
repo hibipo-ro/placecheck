@@ -17,3 +17,7 @@
 body {
   background-color: beige;
 }
+
+#post_show {
+  text-align: center;
+}

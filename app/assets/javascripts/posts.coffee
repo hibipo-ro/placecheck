@@ -7,12 +7,11 @@ window.draw_example_chart = ->
             datasets: [{
                 label: '例',
                 data: [5, 2, 4, 5, 3],
-                # backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                backgroundColor: 'rgba(227,235,179,0.4)',
-                borderColor: 'rgba(227, 235, 179, 1.0)',
+                backgroundColor: 'rgb(69, 209, 230, 0.4)',
+                borderColor: 'rgb(25, 46, 28)',
                 borderWidth: 1,
                 pointRadius: 3.5,
-                pointBackgroundColor: 'rgba(227,235,179,1)',
+                pointBackgroundColor: 'rgb(25, 46, 28)',
                 pointBorderColor: '#fff'
             }]
         },
@@ -38,11 +37,11 @@ window.draw_chart = ->
             datasets: [{
                 label: 'chart',
                 data: gon.data,
-                backgroundColor: 'rgba(227,235,179,0.4)',
-                borderColor: 'rgba(227,235,179,1.0)',
+                backgroundColor: 'rgb(69, 209, 230, 0.4)',
+                borderColor: 'rgb(25, 46, 28)',
                 borderWidth: 1,
                 pointRadius: 3.5,
-                pointBackgroundColor: 'rgba(227,235,179,1.0)',
+                pointBackgroundColor: 'rgb(25, 46, 28)',
                 pointBorderColor: '#fff'
             }]
         },
