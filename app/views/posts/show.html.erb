@@ -1,25 +1,32 @@
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <div>
-                    <div>
-                        <h1> <%= @post.title %> </h1>
-                    </div>
-                    <%= link_to '編集する', edit_post_path %>
-                    <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
-                    <section>
-                        <div>
-                            <%= @post.content %>
-                        </div>
-                        <%= image_tag @post.picture.url if @post.picture? %>
-                        <div>
-                            <canvas id="myRadarChart"></canvas>
-                        </div>
-                    </section>
-                </div>
+<div class="container" id="post_show">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="btn btn-link">
+                <%= link_to '編集する', edit_post_path %>
+                <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
             </div>
+            <div class="card">
+                <h1><%= @post.title %></h1>
+                <%= @post.content %>
+            </div>
+            <canvas id="myRadarChart"></canvas>
+            <%= image_tag @post.picture.url if @post.picture? %>
+            <%= form_for([@post, @post.comments.build]) do |f| %>
+                <%= f.text_field :body %>
+                <%= f.submit('コメントする')%>
+            <% end %>
+
+            <% if @post.comments.any? %>
+            <ul>
+                <% @post.comments.each do |comment| %>
+                    <li>
+                        <%= comment.body %>
+                    </li>
+                <% end %>
+            </ul>
+            <% end %>
+
         </div>
     </div>
 </div>
