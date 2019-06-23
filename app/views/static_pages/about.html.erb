@@ -1,4 +1,89 @@
-<% provide(:title, "About") %>
-<div id="main">
-  <h1>PlaceCheckについて</h1>
-</div>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--  CSS  -->
+    <%# <link rel="stylesheet" href="/app/assets/stylesheets/static_pages.css"> %>
+    <link rel="stylesheet" href="css/about.css">
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <title>About</title>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "PlaceCheck", root_path, id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "このアプリについて", about_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "ユーザー一覧", users_path %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  アカウント <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "プロフィール", current_user %></li>
+                  <li><%= link_to "設定", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "ログアウト", logout_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "ログイン", login_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="bg-info" id="main">
+      <h1 class="text-center" id="title">PlaceCheck</h1>
+      <h5 class="text-center">作業する環境を共有できるサービス</h5>
+      <br>  
+      <div id="over-icon">
+        <i class="far fa-comments fa-10x" id="icon"></i>
+        <div id="icon-title">コメント</div>
+        <div id="icon-content">コメントし合えます</div>
+      </div>
+      <div id="over-icon">
+        <i class="fas fa-chart-line fa-10x" id="icon"></i>   
+        <div id="icon-title">グラフ化</div>
+        <div id="icon-content">グラフで見やすい</div>
+      </div>
+      <div id="over-icon">
+        <i class="fas fa-image fa-10x" id="icon"></i>  
+        <div id="icon-title">画像</div>
+        <div id="icon-content">写真を見ることで状況がわかりやすい</div>
+      </div>
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br>      
+      <br> 
+      <br>     
+      <br>     
+      <br>     
+      <br>     
+      <br>     
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

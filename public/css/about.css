@@ -1,0 +1,26 @@
+#main {
+  text-align: center;
+}
+
+#title {
+  font-size: 100px;
+}
+
+#over-icon {
+  float: left;
+  width: 33.3333%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#icon {
+  font-size: 80px;
+}
+
+#icon-title {
+  font-size: 20px;
+}
+
+#icon-content {
+  margin-top: 10px;
+}
