@@ -10,6 +10,7 @@ class StaticPagesController < ApplicationController
   def help
   end
 
+  #aboutページだけyield使わない
   def about
     render layout: false
   end
