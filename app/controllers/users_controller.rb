@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @posts = @user.posts.paginate(page: params[:page])
     @posts = Post.all
   end
 
@@ -35,7 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "プロフィールを更新しました"
       redirect_to @user    
     else
       render 'edit'
@@ -43,8 +42,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    @user = User.find(params[:id]).destroy
+    flash[:success] = "#{@user.name}を削除しました"
     redirect_to users_url
   end
 
