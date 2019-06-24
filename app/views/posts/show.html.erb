@@ -21,7 +21,8 @@
             <ul>
                 <% @post.comments.each do |comment| %>
                     <li>
-                        <%= comment.body %>
+                        <div class="float-left"><%= comment.user.name if comment.user %></div>
+                        <%= comment.body if comment.body %>
                     </li>
                 <% end %>
             </ul>
