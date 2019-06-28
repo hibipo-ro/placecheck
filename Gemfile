@@ -19,6 +19,8 @@ gem 'gon', '~> 6.2.0'
 
 gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 gem 'pg', '0.20.0'
 gem 'rails_12factor', group: :production
