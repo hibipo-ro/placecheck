@@ -25,4 +25,5 @@ test:
 production:
   <<: *default
   database: placecheck_production
+  url: <%= ENV['DATABASE_URL'] %>
   
