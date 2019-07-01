@@ -4,6 +4,11 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: true)
 
+Post.create!(content: "hello",
+             user_id: 1,
+             title: "hello",
+             data1: 1, data2: 2, data3: 3)
+
 # 99.times do |n|
 #   name  = Faker::Name.name
 #   email = "example-#{n+1}@railstutorial.org"

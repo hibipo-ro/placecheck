@@ -28,6 +28,7 @@ window.draw_example_chart = ->
         }
     });
 
+var draw_chart = draw_chart;
 window.draw_chart = ->
     ctx = document.getElementById("myRadarChart").getContext('2d')
     myRadarChart = new Chart(ctx, {
