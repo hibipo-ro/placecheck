@@ -1,12 +1,16 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
 
-<%= will_paginate %>
+<%= will_paginate %>     
 
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= image_tag user.picture.url, :size => "60x60" if user.picture? %>
+      <% if user.picture %>
+        <%= image_tag user.picture.url, :size => "60x60" %>
+      <% else %>
+        <%= image_tag current_user.image.url e%>
+      <% end %>
       <%= link_to user.name, user %>
       <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
