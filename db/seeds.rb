@@ -9,26 +9,14 @@ Post.create!(content: "hello",
              title: "hello",
              data1: 1, data2: 2, data3: 3)
 
-# 99.times do |n|
-#   name  = Faker::Name.name
-#   email = "example-#{n+1}@railstutorial.org"
-#   password = "password"
-#   User.create!(name:  name,
-#                email: email,
-#                password:              password,
-#                password_confirmation: password)
-# end
+User.create!(name:  "テスト",
+             email: "test@test.com",
+             password:              "password",
+             password_confirmation: "password",
+             admin: true)
 
-# users = User.order(:created_at).take(6)
-# 50.times do
-#   content = Faker::Lorem.sentence(5)
-#   users.each { |user| user.posts.create!(content: content) }
-# end
+Post.create!(content: "test",
+             user_id: 2,
+             title: "test",
+             data1: 3, data2: 5, data3: 1)
 
-# リレーションシップ
-# users = User.all
-# user  = users.first
-# following = users[2..50]
-# followers = users[3..40]
-# following.each { |followed| user.follow(followed) }
-# followers.each { |follower| follower.follow(user) }
