@@ -21,3 +21,7 @@ body {
 #post_show {
   text-align: center;
 }
+
+li {
+  list-style: none;
+}

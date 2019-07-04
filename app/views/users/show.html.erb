@@ -6,7 +6,7 @@
         <% if @user.picture %>
           <%= image_tag @user.picture.url, :size => "60x60" %>
         <% else %>
-          <%= image_tag current_user.image.url e%>
+          <%= image_tag current_user.image.url %>
         <% end %>
         <%= @user.name %>
       </h1>

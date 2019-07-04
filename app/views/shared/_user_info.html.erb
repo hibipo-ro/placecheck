@@ -1,9 +1,9 @@
 <% if current_user.picture %>
   <%= image_tag current_user.picture.url, :size => "60x60" %>
 <% else %>
-  <%= image_tag current_user.image.url e%>
+  <%= image_tag current_user.image.url %>
 <% end %>
 
 <h1><%= current_user.name %></h1>
 <span><%= link_to "プロフィール", current_user %></span>
-<span><%= pluralize(current_user.posts.count, "post") %></span>
+<span><%= pluralize(current_user.posts.count, "投稿") %></span>
