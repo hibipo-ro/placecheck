@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
-    @user = User.find_by(id: current_user.id)
+    @user = @post.user
     data = [@post.data1, @post.data2, @post.data3, @post.data4, @post.data5]
     gon.data = data.reject { |data| data.blank? }
   end
