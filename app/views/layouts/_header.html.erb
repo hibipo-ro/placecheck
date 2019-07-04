@@ -1,8 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container bg-warning">
-    <%= link_to "PlaceCheck", root_path, id: "logo" %>
+    <%= link_to "PlaceCheck(投稿画面)", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navbar-nav" id="header">
         <li><%= link_to "このアプリについて", about_path %></li>
         <% if logged_in? %>
           <li><%= link_to "ユーザー一覧", users_path %></li>

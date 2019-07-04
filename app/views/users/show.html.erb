@@ -19,10 +19,26 @@
     <%= render 'follow_form' if logged_in? %>
     <% if @user.posts.any? %>
       <h3><%= @user.name %> さんの投稿一覧 (<%= @user.posts.count %> ) 件</h3>
-      <ol class="posts">
-        <% @posts.each do |post| %>
-        <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
-        <% end %>
+      <ol class="posts">        
+        
+        <div class="container">
+          <div class="row">
+          <% @posts.each do |post| %>
+            <div class="col-sm-4 card mb-3">
+            <li>
+              <a href="/posts/<%= post.id %>"><%= post.title %></a>
+              <% if @user.picture %>
+                <%= image_tag post.picture, :size => "210x150"  %>
+              <% else %>
+                <%= image_tag post.user.image.url, :size => "60x60" %>
+              <% end %>
+            </li>
+              <%= post.content %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+
       </ol>
     <% end %>
   </div>

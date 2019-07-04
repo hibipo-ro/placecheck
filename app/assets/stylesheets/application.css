@@ -25,3 +25,7 @@ body {
 li {
   list-style: none;
 }
+
+#header {
+  float: left;
+}
