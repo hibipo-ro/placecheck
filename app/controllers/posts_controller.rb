@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     
     def post_params
       params.require(:post).permit(:content, :title,
-                                   :data1, :data2, :data3, :data4, :data5, :picture)
+                                   :data1, :data2, :data3, :data4, :data5, :picture,:remove_picture)
     end
 
     #正しいユーザーか確認
