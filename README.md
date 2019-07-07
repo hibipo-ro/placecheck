@@ -4,8 +4,7 @@
 出かける前に作業する場所の状態を知れたら便利です。
 https://placecheckbyhibi.herokuapp.com/
 
-
-* 使用している技術
+### 使用している技術
 - 画像アップロード
   - carrierwave
   - mini_magick
@@ -15,6 +14,12 @@ https://placecheckbyhibi.herokuapp.com/
   - bootstap
 - グラフ
   - chart.js
-
+  
+### 機能一覧
+- 投稿,編集、削除　機能
+- コメント
+- 画像投稿
+- フォロー
+- １度投稿した画像の削除
 
 # placecheck
