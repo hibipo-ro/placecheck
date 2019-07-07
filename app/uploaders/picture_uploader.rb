@@ -56,6 +56,12 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+
+  # ここでファイル形式を指定する
+  def filename
+    original_filename if original_filename
+  end
+  
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
