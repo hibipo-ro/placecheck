@@ -12,14 +12,14 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   def default_url
     "default.jpg"
@@ -58,9 +58,9 @@ class PictureUploader < CarrierWave::Uploader::Base
 
 
   # ここでファイル形式を指定する
-  def filename
-    original_filename if original_filename
-  end
+  # def filename
+  #   original_filename if original_filename
+  # end
   
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
