@@ -9,6 +9,8 @@ https://placecheckbyhibi.herokuapp.com/
 - 画像アップロード
   - carrierwave
   - mini_magick
+- 画像ストレージ
+  - Amazon S3
 - デザイン
   - bootstap
 - グラフ
