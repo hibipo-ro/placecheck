@@ -1,4 +1,13 @@
 /*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+#title {
+  font-size: 500px;
+}
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,9 +19,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 body {
   background-color: beige;
@@ -31,7 +41,7 @@ li {
 }
 
 .back {
-  background-image: url(/images/_23-2147864599.jpg);
+  background-image: url(https://s3-placecheck.s3-ap-northeast-1.amazonaws.com/_23-2147864599.jpg);
   background-size: contain;
   border-radius: 10px;
 }
