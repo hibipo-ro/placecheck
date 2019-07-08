@@ -22,4 +22,11 @@ https://placecheckbyhibi.herokuapp.com/
 - フォロー
 - １度投稿した画像の削除
 
+### バージョン
+- Ruby 2.5.1
+- Rails 5.1.6
+- Heroku
+- Bootstrap4
+- PostgreSQL 11.3
+
 # placecheck
