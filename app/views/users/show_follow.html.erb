@@ -12,7 +12,8 @@
       <% if @users.any? %>
         <div class="user_avatars">
           <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
+
+
           <% end %>
         </div>
       <% end %>
@@ -22,7 +23,22 @@
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users follow">
-        <%= render @users %>
+
+        <% @users.each do |user| %>
+          <li>
+            <% if user.picture %>
+              <%= image_tag user.picture.url, :size => "60x60" %>
+            <% else %>
+              <%= image_tag current_user.image.url e%>
+            <% end %>
+            <%= link_to user.name, user %>
+            <% if current_user.admin? && !current_user?(user) %>
+          | <%= link_to "delete", user, method: :delete,
+                                        data: { confirm: "削除しますか?" } %>
+            <% end %>
+          </li>
+        <% end %>
+
       </ul>
       <%= will_paginate %>
     <% end %>
