@@ -27,6 +27,8 @@ gem 'fog-aws'
 gem 'pg', '0.20.0'
 gem 'rails_12factor', group: :production
 
+gem 'rubocop'
+
 group :development, :test do
   # gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
