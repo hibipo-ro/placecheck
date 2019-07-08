@@ -1,11 +1,11 @@
 <div class="container" id="post_show">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <li class="col-sm-8">
                 <% if @user.picture %>
                     <%= image_tag @user.picture.url, :size => "60x60" %>
                 <% else %>
-                    <%= image_tag current_user.image.url e%>
+                    <%= image_tag current_user.image.url %>
                 <% end %>
                 <%= @user.name %>
             <div class="btn btn-link">
@@ -23,16 +23,11 @@
                 <%= f.submit('コメントする')%>
             <% end %>
 
-            <% if @post.comments.any? %>
+            <%# <% if @post.comments.any? %> %>
             <ul>
-                <% @post.comments.each do |comment| %>
-                    <li>
-                        <div class="float-left"><%= comment.user.name if comment.user %></div>
-                        <%= comment.body if comment.body %>
-                    </li>
-                <% end %>
+                
             </ul>
-            <% end %>
+            <%# <% end %> %>
 
         </div>
     </div>
