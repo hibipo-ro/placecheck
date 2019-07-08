@@ -29,3 +29,9 @@ li {
 #header {
   float: left;
 }
+
+.back {
+  background-image: url(https://s3-placecheck.s3-ap-northeast-1.amazonaws.com/_23-2147864599.jpg);
+  background-size: contain;
+  border-radius: 10px;
+}

@@ -34,17 +34,37 @@
     </div>
   </div>
 <% else %>
-  <div>
-    <h1>ようこそ PlaceCheck</h1>
-    <%= image_tag 'https://s3-placecheck.s3-ap-northeast-1.amazonaws.com/cafe_nomad_man.png' %>
+  <div class="row">
+    <div class="back col-12">
+      <h1>ようこそ PlaceCheck</h1>
+      <h2 class="col-10 col-md-12">
+        行きたい場所の作業環境を
+        チェックできるサービスです。
+      </h2>
 
-    <h2>
-      行きたい場所の作業環境を
-      チェックできるサービスです。
-    </h2>
+      <%= link_to "今すぐ登録する", signup_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to 'かんたんログイン', testsessions_path, method: :post, class:"btn btn-lg btn-success center-block" %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    
 
-    <%= link_to "今すぐ登録する", signup_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to 'かんたんログイン', testsessions_path, method: :post, class:"btn btn-lg btn-success center-block" %>
   </div>
 
 <% end %>
