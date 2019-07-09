@@ -26,6 +26,13 @@
           <% @posts.each do |post| %>
             <div class="col-sm-4 card mb-3">
             <li>
+
+              <% if post.user.picture %>
+                <%= image_tag post.user.picture.url, :size => "40x40" %>
+              <% else %>
+                <%= image_tag post.user.image.url, :size => "40x40" %>
+              <% end %>
+
               <a href="/posts/<%= post.id %>"><%= post.title %></a>
               <% if @user.picture %>
                 <%= image_tag post.picture, :size => "210x150"  %>
