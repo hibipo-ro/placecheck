@@ -5,8 +5,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
     user = current_user
-    # @posts = user.feed.all
-    @posts = Post.all
+    @posts = user.feed.all if logged_in?
   end
 
   def help
