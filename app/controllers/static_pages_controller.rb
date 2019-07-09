@@ -5,7 +5,8 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
     user = current_user
-    @posts = user.feed.all
+    # @posts = user.feed.all
+    @posts = Post.all
   end
 
   def help
@@ -18,4 +19,14 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  private
+
+    # ユーザーのステータスフィードを返す
+    def feed
+      following_ids = "SELECT followed_id FROM relationships
+                      WHERE follower_id = :user_id"
+      Post.where("user_id IN (#{following_ids})
+                      OR user_id = :user_id", user_id: id)
+    end
 end
