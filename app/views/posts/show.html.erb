@@ -18,16 +18,22 @@
             </div>
             <canvas id="myRadarChart"></canvas>
             <%= image_tag @post.picture.url if @post.picture? %>
+
             <%= form_for([@post, @post.comments.build]) do |f| %>
                 <%= f.text_field :body %>
-                <%= f.submit('コメントする')%>
+                <%= f.submit('コメントする') %>
             <% end %>
 
-            <%# <% if @post.comments.any? %> %>
+            <% if @post.comments.any? %>
             <ul>
-                
+                <% @post.comments.each do |comment| %>
+                <li>
+                    <%= comment.user.name if comment.user  %>
+                    <%= comment.body if comment.body%>
+                </li>
+                <% end %>
             </ul>
-            <%# <% end %> %>
+            <% end %>
 
         </div>
     </div>

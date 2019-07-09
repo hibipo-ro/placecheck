@@ -9,9 +9,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user
-    @comment = Comment.all
     data = [@post.data1, @post.data2, @post.data3, @post.data4, @post.data5]
     gon.data = data.reject { |data| data.blank? }
+    # @user_comment = User.joins("LEFT OUTER JOIN comments ON users.id = comments.user_id").select("users.*, comments.*").joins("LEFT OUTER JOIN posts ON post.id = comments.post_id").select("posts.*, comments.*")
   end
 
   def create
