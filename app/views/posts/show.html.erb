@@ -1,7 +1,7 @@
 <div class="container" id="post_show">
     <div class="row">
         <div class="col-sm-2"></div>
-        <li class="col-sm-8">
+        <div class="col-sm-8">
                 <% if @user.picture %>
                     <%= image_tag @user.picture.url, :size => "60x60" %>
                 <% else %>
@@ -28,8 +28,21 @@
             <ul>
                 <% @post.comments.each do |comment| %>
                 <li>
-                    <%= comment.user.name if comment.user  %>
-                    <%= comment.body if comment.body%>
+
+                    <div class="balloon6 mx-auto">
+                        <div class="faceicon">
+                            <% if comment.user %>
+                                <%= image_tag comment.user.picture.url, class: 'mr-3', :size => '40x40' %>
+                            <% else %>
+                                <%= image_tag comment.user.image.url if comment.user %>
+                            <% end %>
+                         <p><%= comment.user.name if comment.user  %></p>
+                        </div>
+                        <div class="says">
+                            <p><%= comment.body if comment.body%></p>
+                        </div>
+                    </div>
+                   
                 </li>
                 <% end %>
             </ul>
