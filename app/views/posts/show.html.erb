@@ -37,6 +37,7 @@
                                 <%= image_tag comment.user.image.url if comment.user %>
                             <% end %>
                          <%= comment.user.name if comment.user  %>
+                         <%= link_to '削除する', [@post, comment], method: :delete, data: { confirm: '削除しますか？' }  if current_user == comment.user %>
                         </div>
                         <div class="says">
                             <%= comment.body if comment.body %>
