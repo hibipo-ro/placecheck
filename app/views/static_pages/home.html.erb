@@ -31,7 +31,8 @@
               <%= image_tag post.user.image.url, :size => "60x60" %>
             <% end %>
           </li>
-            <%= post.content %>
+            (<%= post.liked_users.count %>)いいね
+            <%= simple_format(post.content) %>
           </div>
         <% end %>
         </div>

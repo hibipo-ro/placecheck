@@ -43,6 +43,13 @@
               <%= post.content %>
             </div>
           <% end %>
+
+          <h3>いいねしている投稿</h3>
+          <% @user.liked_posts.each do |post| %>
+            <%= post.user.name %>
+            <%= post.content %>
+          <% end %>
+
           </div>
         </div>
 
