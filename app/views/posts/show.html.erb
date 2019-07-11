@@ -29,17 +29,17 @@
                 <% @post.comments.each do |comment| %>
                 <li>
 
-                    <div class="balloon6 mx-auto">
+                    <div class="balloon6 mx-auto card">
                         <div class="faceicon">
                             <% if comment.user %>
                                 <%= image_tag comment.user.picture.url, class: 'mr-3', :size => '40x40' %>
                             <% else %>
                                 <%= image_tag comment.user.image.url if comment.user %>
                             <% end %>
-                         <p><%= comment.user.name if comment.user  %></p>
+                         <%= comment.user.name if comment.user  %>
                         </div>
                         <div class="says">
-                            <p><%= comment.body if comment.body%></p>
+                            <%= comment.body if comment.body %>
                         </div>
                     </div>
                    
