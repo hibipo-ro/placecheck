@@ -13,6 +13,7 @@
                     <%= link_to '編集する', edit_post_path %>
                     <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
                 </span>
+                <%= time_ago_in_words(@post.created_at) %> ago
             </div>
             <div class="">
                 
@@ -28,7 +29,7 @@
                 <% end %>
                 <h5>いいねしたユーザー</h5>
                 <% @post.liked_users.each do |user| %>
-                    <li><%= user.name %></li>
+                    <li><%= link_to user.name, user_path(@user) %></li>
                 <% end %>
                 <h1 class="border-top"><%= @post.title %></h1>
                 <%= @post.content %>
