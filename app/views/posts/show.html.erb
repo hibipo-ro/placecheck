@@ -1,20 +1,20 @@
 <div class="container" id="post_show">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 card">
+            <div class="text-left">
                 <% if @user.picture %>
                     <%= image_tag @user.picture.url, :size => "60x60" %>
                 <% else %>
                     <%= image_tag current_user.image.url %>
                 <% end %>
                 <%= @user.name %>
-            <div class="btn btn-link">
-                <%= link_to '編集する', edit_post_path %>
-                <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
+                <span class="btn btn-link text-right">
+                    <%= link_to '編集する', edit_post_path %>
+                    <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
+                </span>
             </div>
-            <div class="card">
-                <h1><%= @post.title %></h1>
-                <%= @post.content %>
+            <div class="">
                 
                 <h4>いいね: <%= @post.likes.count %>件</h4>
                 <% if current_user.already_liked?(@post) %>
@@ -26,22 +26,26 @@
                 <% @post.liked_users.each do |user| %>
                     <li><%= user.name %></li>
                 <% end %>
+                <h1 class="border-top"><%= @post.title %></h1>
+                <%= @post.content %>
 
             </div>
-            <canvas id="myRadarChart"></canvas>
-            <%= image_tag @post.picture.url if @post.picture? %>
+            <div class="border-bottom"> 
+                <canvas id="myRadarChart"></canvas>
+                <%= image_tag @post.picture.url if @post.picture? %>
 
-            <%= form_for([@post, @post.comments.build]) do |f| %>
-                <%= f.text_field :body %>
-                <%= f.submit('コメントする') %>
-            <% end %>
+                <%= form_for([@post, @post.comments.build]) do |f| %>
+                    <%= f.text_field :body %>
+                    <%= f.submit('コメントする') %>
+                <% end %>
+            </div>
 
             <% if @post.comments.any? %>
             <ul>
                 <% @post.comments.each do |comment| %>
                 <li>
 
-                    <div class="balloon6 mx-auto card">
+                    <div class="balloon6 mx-auto">
                         <div class="faceicon">
                             <% if comment.user %>
                                 <%= image_tag comment.user.picture.url, class: 'mr-3', :size => '40x40' %>
