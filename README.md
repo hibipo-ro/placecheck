@@ -23,6 +23,7 @@ https://placecheckbyhibi.herokuapp.com/
 - フォロー
 - １度投稿した画像の削除
 - いいね一覧
+- テストユーザーログイン
 
 ### バージョン
 - Ruby 2.5.1
@@ -32,3 +33,8 @@ https://placecheckbyhibi.herokuapp.com/
 - PostgreSQL 11.3
 
 # placecheck
+### 作った動機 
+勉強で外へ出かけた時に人がいっぱいで入れない時がありました。 
+結局他の場所へ行って勉強しました。 
+また、初めて行く場所もWifiが弱かったり、環境がわからない状態で行くので、　
+行く前に知れたら便利だなと思いました。
