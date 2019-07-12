@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :following, :followers
+      get :like_posts
     end
   end  
   resources :posts do
