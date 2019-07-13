@@ -9,7 +9,7 @@
                     <% else %>
                         <%= image_tag current_user.image.url %>
                     <% end %>
-                    <%= @user.name %>
+                    <%= link_to @user.name, user_path(@user) %>
                     <span class="btn btn-link text-right">
                         <%= link_to '編集する', edit_post_path %>
                         <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>

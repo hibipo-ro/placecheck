@@ -19,13 +19,14 @@
         <% @posts.each do |post| %>
           <div class="col-sm-4 card mb-3">
           <li>
-            <% if post.user.picture %>
-              <%= link_to image_tag post.user.picture.url, :size => "40x40" %>
-            <% else %>
-              <%= link_to image_tag post.user.image.url, :size => "40x40" %>
-            <% end %>
-            <a href="/posts/<%= post.id %>"><%= post.title %></a>
-            <span><%= time_ago_in_words(post.created_at) %>前</span>
+            <div>
+              <% if post.user.picture %>
+                <%= link_to image_tag post.user.picture.url, :size => "40x40" %>
+              <% else %>
+                <%= link_to image_tag post.user.image.url, :size => "40x40" %>
+              <% end %>
+              <%= link_to post.user.name, post.user %>
+            </div>
             <% if @user.picture %>
               <%= image_tag post.picture, :size => "210x150"  %>
             <% else %>
@@ -36,7 +37,9 @@
               <i class="fas fa-heart"><%= post.liked_users.count %></i>
               <i class="fas fa-comment"><%= post.comments.count %></i>
             </div>
+            <h5><a href="/posts/<%= post.id %>"><%= post.title %></a></h5>
             <%= simple_format(post.content) %>
+            <%= time_ago_in_words(post.created_at) %>前
           </div>
         <% end %>
         </div>
