@@ -17,8 +17,8 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.posts.any? %>
-      <h3><%= @user.name %> さんがいいねした投稿一覧 (<%= @user.posts.count %> ) 件</h3>
+    <% if @posts.any? %>
+      <h3><%= @user.name %> さんがいいねした投稿一覧 (<%= @user.liked_posts.count %> ) 件</h3>
 
       <a href="<%= like_posts_user_path(@user) %>">いいね一覧</a>
       <a href="<%= user_path(@user) %>">プロフィール</a>

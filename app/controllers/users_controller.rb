@@ -62,8 +62,8 @@ class UsersController < ApplicationController
   end
 
   def like_posts
-    @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page])
+    @user=User.find(params[:id])
+    @posts=@user.likes.page(params[:page])
     render 'like_posts'
   end
 

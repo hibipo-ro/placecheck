@@ -2,44 +2,52 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 card">
-            <div class="text-left">
-                <% if @user.picture %>
-                    <%= image_tag @user.picture.url, :size => "60x60" %>
-                <% else %>
-                    <%= image_tag current_user.image.url %>
-                <% end %>
-                <%= @user.name %>
-                <span class="btn btn-link text-right">
-                    <%= link_to '編集する', edit_post_path %>
-                    <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
-                </span>
-                <%= time_ago_in_words(@post.created_at) %> ago
-            </div>
             <div class="">
-                
-                <h4>いいね: <%= @post.likes.count %>件</h4>
-                <% if current_user.already_liked?(@post) %>
-                    <%= link_to post_like_path(@post), method: :delete, remote: true do %>
-                        <i class="fas fa-heart fa-2x"></i>
+                <div class="card-header">
+                    <% if @user.picture %>
+                        <%= image_tag @user.picture.url, :size => "60x60" %>
+                    <% else %>
+                        <%= image_tag current_user.image.url %>
                     <% end %>
-                <% else %>
-                    <%= link_to post_likes_path(@post),method: :post, remote: true do %>
-                        <i class="far fa-heart fa-2x"></i>
-                    <% end %>
-                <% end %>
-                <h5>いいねしたユーザー</h5>
-                <% @post.liked_users.each do |user| %>
-                    <li><%= link_to user.name, user_path(@user) %></li>
-                <% end %>
-                <h1 class="border-top"><%= @post.title %></h1>
-                <%= @post.content %>
-
+                    <%= @user.name %>
+                    <span class="btn btn-link text-right">
+                        <%= link_to '編集する', edit_post_path %>
+                        <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
+                    </span>
+                <%= time_ago_in_words(@post.created_at) %> ago
+                </div>
+                <div class="card">
+                    <h1 class=""><%= @post.title %></h1>
+                    <%= @post.content %>
+                </div>
+                <div class="card">
+                    <div class="">
+                        <h4>いいね: <%= @post.likes.count %>件</h4>
+                        <% if current_user.already_liked?(@post) %>
+                            <%= link_to post_like_path(@post), method: :delete, remote: true do %>
+                                <i class="fas fa-heart fa-2x"></i>
+                            <% end %>
+                        <% else %>
+                            <%= link_to post_likes_path(@post),method: :post, remote: true do %>
+                                <i class="far fa-heart fa-2x"></i>
+                            <% end %>
+                        <% end %>
+                    </div>  
+                    <div>              
+                        <h5>いいねしたユーザー↓</h5>
+                        <% @post.liked_users.each do |user| %>
+                            <li><%= link_to user.name, user_path(@user) %></li>
+                        <% end %>
+                    </div>
+                </div>
             </div>
+            
+
             <div class="border-bottom"> 
                 <canvas id="myRadarChart"></canvas>
                 <%= image_tag @post.picture.url if @post.picture? %>
 
-                <%= form_for([@post, @post.comments.build]) do |f| %>
+                <%= form_for([@post, @post.comments.build])  do |f| %>
                     <%= f.text_field :body %>
                     <%= f.submit('コメントする') %>
                 <% end %>
@@ -50,7 +58,7 @@
                 <% @post.comments.each do |comment| %>
                 <li>
 
-                    <div class="balloon6 mx-auto">
+                    <div class="mx-auto card">
                         <div class="faceicon">
                             <% if comment.user %>
                                 <%= image_tag comment.user.picture.url, class: 'mr-3', :size => '40x40' %>
