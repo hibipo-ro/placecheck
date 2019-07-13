@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
+  before_action :authenticate_test_user, only: [:edit, :destroy]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -82,5 +83,9 @@ class UsersController < ApplicationController
     # 管理者かどうか確認
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def authenticate_test_user
+    redirect_to root_path, flash: { danger: 'テストユーザーは編集できないです。新規登録お願いします'} if current_user == User.find(34)
   end
 end
