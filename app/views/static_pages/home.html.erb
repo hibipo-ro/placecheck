@@ -32,7 +32,10 @@
               <%= image_tag post.user.image.url, :size => "60x60" %>
             <% end %>
           </li>
-            <%= post.liked_users.count %>人が「いいね！」
+            <div>
+              <i class="fas fa-heart"><%= post.liked_users.count %></i>
+              <i class="fas fa-comment"><%= post.comments.count %></i>
+            </div>
             <%= simple_format(post.content) %>
           </div>
         <% end %>
