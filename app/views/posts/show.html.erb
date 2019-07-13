@@ -14,7 +14,7 @@
                         <%= link_to '編集する', edit_post_path %>
                         <%= link_to '削除する', post_path, method: :delete, data: { confirm: '削除しますか？' } %>
                     </span>
-                <%= time_ago_in_words(@post.created_at) %> ago
+                <%= time_ago_in_words(@post.created_at) %> 前
                 </div>
                 <div class="card">
                     <h1 class=""><%= @post.title %></h1>
