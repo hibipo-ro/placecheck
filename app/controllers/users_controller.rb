@@ -86,6 +86,6 @@ class UsersController < ApplicationController
   end
 
   def authenticate_test_user
-    redirect_to root_path, flash: { danger: 'テストユーザーは編集できないです。新規登録お願いします'} if current_user == User.find(2)
+    redirect_to root_path, flash: { danger: 'テストユーザーは編集できないです。新規登録お願いします'} if current_user == User.find_by(email: "test@test.com")
   end
 end

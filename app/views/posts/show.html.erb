@@ -18,7 +18,7 @@
                 </div>
                 <div class="card">
                     <h1 class=""><%= @post.title %></h1>
-                    <%= @post.content %>
+                    <%= simple_format(@post.content) %>
                 </div>
                 <div class="card">
                     <div class="">

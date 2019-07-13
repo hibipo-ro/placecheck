@@ -37,7 +37,7 @@
               <i class="fas fa-heart"><%= post.liked_users.count %></i>
               <i class="fas fa-comment"><%= post.comments.count %></i>
             </div>
-            <h5><a href="/posts/<%= post.id %>"><%= post.title %></a></h5>
+            <h5><a href="/posts/<%= post.id %>"><%= simple_format(post.title) %></a></h5>
             <%= simple_format(post.content) %>
             <%= time_ago_in_words(post.created_at) %>前
           </div>
