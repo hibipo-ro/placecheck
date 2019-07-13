@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
 
-   # ユーザーのステータスフィードを返す
+  # ユーザーのステータスフィードを返す
   def feed
     following_ids = "SELECT followed_id FROM relationships
                      WHERE follower_id = :user_id"

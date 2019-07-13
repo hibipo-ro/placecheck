@@ -3,3 +3,87 @@ inherit_from: .rubocop_todo.yml
 Rails:
   Enabled: true
 
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - vendor/**/*
+    - config/**/*
+    - lib/tasks/*
+    - Gemfile
+    - features/**/*
+    - spec/**/*
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
+FormatString:
+  EnforcedStyle: percent
+
+NumericLiterals:
+  Enabled: false
+
+RedundantReturn:
+  AllowMultipleReturnValues: true
+
+DotPosition:
+  EnforcedStyle: trailing
+
+Style/SymbolProc:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false

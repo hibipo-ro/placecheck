@@ -80,12 +80,12 @@ class UsersController < ApplicationController
     redirect_to(root_url) unless current_user?(@user)
   end
 
-    # 管理者かどうか確認
+  # 管理者かどうか確認
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
 
   def authenticate_test_user
-    redirect_to root_path, flash: { danger: 'テストユーザーは編集できないです。新規登録お願いします'} if current_user == User.find_by(email: "test@test.com")
+    redirect_to root_path, flash: { danger: 'テストユーザーは編集できないです。新規登録お願いします' } if current_user == User.find_by(email: "test@test.com")
   end
 end
