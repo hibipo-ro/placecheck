@@ -21,9 +21,9 @@
           <li>
             <div>
               <% if post.user.picture %>
-                <%= link_to image_tag post.user.picture.url, :size => "40x40" %>
+                <%= link_to image_tag post.user.picture.url, :size => "30x30" %>
               <% else %>
-                <%= link_to image_tag post.user.image.url, :size => "40x40" %>
+                <%= link_to image_tag post.user.image.url, :size => "30x30" %>
               <% end %>
               <%= link_to post.user.name, post.user %>
             </div>
