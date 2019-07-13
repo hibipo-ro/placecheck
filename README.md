@@ -14,6 +14,8 @@ https://placecheckbyhibi.herokuapp.com/
   - bootstap
 - グラフ
   - chart.js
+- 静的コード解析
+  - rubocop
   
 ### 機能一覧
 - 投稿,編集、削除　機能
