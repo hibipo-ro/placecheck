@@ -17,13 +17,13 @@ Rails.application.routes.draw do
       get :following, :followers
       get :like_posts
     end
-  end  
+  end
   resources :posts do
     resources :comments
     resources :likes, only: [:create, :destroy]
   end
-       
-  resources :relationships,       only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
 
   resources :testsessions, only: :create
 end

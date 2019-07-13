@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
-  has_many :comments  , dependent: :destroy
+  has_many :comments, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
@@ -10,9 +10,9 @@ class Post < ApplicationRecord
   validate  :picture_size
 
   # アップロードされた画像のサイズをバリデーションする
-    def picture_size
-      if picture.size > 10.megabytes
-        errors.add(:picture, "should be less than 10MB")
-      end
+  def picture_size
+    if picture.size > 10.megabytes
+      errors.add(:picture, "should be less than 10MB")
     end
+  end
 end

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)    
+    @user = User.new(user_params)
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "プロフィールを更新しました"
-      redirect_to @user    
+      redirect_to @user
     else
       render 'edit'
     end
@@ -62,26 +62,25 @@ class UsersController < ApplicationController
   end
 
   def like_posts
-    @user=User.find(params[:id])
-    @posts=@user.likes.page(params[:page])
+    @user = User.find(params[:id])
+    @posts = @user.likes.page(params[:page])
     render 'like_posts'
   end
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :picture, :remove_picture)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :picture, :remove_picture)
+  end
 
-    # 正しいユーザーかどうか確認
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
-    end
+  # 正しいユーザーかどうか確認
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
 
-     # 管理者かどうか確認
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+    # 管理者かどうか確認
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end

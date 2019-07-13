@@ -34,7 +34,6 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to("/")
   end
-  
 
   def destroy
     @post.destroy
@@ -43,18 +42,14 @@ class PostsController < ApplicationController
   end
 
   private
-    
-    def post_params
-      params.require(:post).permit(:content, :title,
-                                   :data1, :data2, :data3, :data4, :data5, :picture,:remove_picture)
-    end
 
-    #正しいユーザーか確認
-    def correct_user
-      @post = current_user.posts.find_by(id: params[:id])
-      redirect_to root_url if @post.nil?
-    end
+  def post_params
+    params.require(:post).permit(:content, :title, :data1, :data2, :data3, :data4, :data5, :picture, :remove_picture)
+  end
+
+  # 正しいユーザーか確認
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
+  end
 end
-
-
-

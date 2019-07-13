@@ -25,7 +25,6 @@ class PictureUploader < CarrierWave::Uploader::Base
     "default.jpg"
   end
 
-
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -56,12 +55,10 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-
   # ここでファイル形式を指定する
   # def filename
   #   original_filename if original_filename
   # end
-  
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
