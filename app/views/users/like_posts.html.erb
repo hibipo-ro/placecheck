@@ -37,13 +37,14 @@
                 <%= image_tag post.user.image.url, :size => "40x40" %>
               <% end %>
 
-              <a href="/posts/<%= post.id %>"><%= post.title %></a>
+              <%= link_to post.user.name, user_path(post.user.id) %>
               <% if @user.picture %>
                 <%= image_tag post.picture, :size => "210x150"  %>
               <% else %>
                 <%= image_tag post.user.image.url, :size => "60x60" %>
               <% end %>
             </li>
+              <a href="/posts/<%= post.id %>"><%= post.title %></a>
               <%= post.content %>
             </div>
           <% end %>
