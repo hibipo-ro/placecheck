@@ -45,7 +45,8 @@
               <% end %>
             </li>
               <a href="/posts/<%= post.id %>"><%= post.title %></a>
-              <%= post.content %>
+              <%= simple_format(post.content) %>
+              <%= time_ago_in_words(post.created_at) %>前
             </div>
           <% end %>
 
