@@ -46,11 +46,14 @@
             <div class="border-bottom"> 
                 <canvas id="myRadarChart"></canvas>
                 <%= image_tag @post.picture.url if @post.picture? %>
+                
+                <div class="mt-4">
+                    <%= form_for([@post, @post.comments.build])  do |f|  %>
+                        <%= f.text_field :body %>
+                        <%= f.submit('コメントする') %>
+                    <% end %>
+                </div>
 
-                <%= form_for([@post, @post.comments.build])  do |f| %>
-                    <%= f.text_field :body %>
-                    <%= f.submit('コメントする') %>
-                <% end %>
             </div>
 
             <% if @post.comments.any? %>
