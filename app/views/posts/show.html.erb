@@ -45,7 +45,9 @@
 
             <div class="border-bottom"> 
                 <canvas id="myRadarChart"></canvas>
-                <%= image_tag @post.picture.url if @post.picture? %>
+                <% @post.picture.each do |pp| %>
+                    <%= image_tag pp, :size => "210x150", class: 'mt-2' %>
+                <% end %>
                 
                 <div class="mt-4">
                     <%= form_for([@post, @post.comments.build])  do |f|  %>

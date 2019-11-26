@@ -38,7 +38,9 @@
 
               <%= post.user.name %>
               <% if @user.picture %>
-                <%= image_tag post.picture, :size => "210x150"  %>
+                <% post.picture.each do |pp| %>
+                  <%= image_tag pp, :size => "210x150", class: 'mt-2' %>
+                <% end %>
               <% else %>
                 <%= image_tag post.user.image.url, :size => "60x60" %>
               <% end %>
