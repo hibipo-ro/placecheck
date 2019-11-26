@@ -23,3 +23,5 @@
 .byebug_history
 
 /config/initializers/carrier_wave.rb
+
+/config/secrets.yml
